@@ -1,0 +1,26 @@
+spring:
+  profiles:
+    active: oauth2
+  datasource:
+    url: jdbc:mysql://localhost/shop?characterEncoding=utf8
+    username: shopuser
+    password: shoppass
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      maximum-pool-size: 10
+  jpa:
+    database: mysql
+    show-sql: true
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+        show_sql: true
+        use_sql_comments: true
+  jackson:
+    property-naming-strategy: SNAKE_CASE
+logging:
+  level:
+    root: INFO
+jwt:
+  secret: ${jwt.secret}
